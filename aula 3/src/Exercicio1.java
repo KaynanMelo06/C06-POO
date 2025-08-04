@@ -6,7 +6,7 @@ public class Exercicio1 {
         int lanche3 = 2;
 
         int soma = lanche1 + lanche2 + lanche3;
-        int media = soma/3;
+        int media =  soma/3;
 
         System.out.println("Total de lanche consumido: " + soma);
         System.out.println("Media de lanche consumido: " + media);
