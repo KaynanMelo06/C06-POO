@@ -1,4 +1,4 @@
-package Exercicio2;
+package Exercicio3;
 
 public class Zumbi {
     //Membros
@@ -8,7 +8,6 @@ public class Zumbi {
     //Métodos
     double mostraVida(){
         return vida;
-        //System.out.println(this.vida);
     }
 
     void transfereVida(Zumbi zumbiAlvo, double quantia){

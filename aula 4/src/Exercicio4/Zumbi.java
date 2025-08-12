@@ -1,9 +1,10 @@
-package Exercicio3;
+package Exercicio4;
 
 public class Zumbi {
     //Membros
     String nome;
     double vida;
+    Boolean podeTransferir = false;
 
     //Métodos
     double mostraVida(){
@@ -11,8 +12,16 @@ public class Zumbi {
     }
 
     void transfereVida(Zumbi zumbiAlvo, double quantia){
-        vida -= quantia;
-        zumbiAlvo.vida += quantia;
+
+        if ((vida - quantia) <= 0){
+            podeTransferir = false;
+        }
+        else {
+            podeTransferir = true;
+            vida -= quantia;
+            zumbiAlvo.vida += quantia;
+        }
+        
     }
 
 }
