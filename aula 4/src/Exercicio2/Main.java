@@ -11,10 +11,12 @@ public class Main {
         z2.nome = "Marco";
         z2.vida = 150.0;
 
-        z1.mostraVida();
-        z2.mostraVida();
+        System.out.println("zumbi1: " + z1.mostraVida());
+        System.out.println("zumbi2: " + z2.mostraVida());
         z2.transfereVida(z1, 50);
-        z2.mostraVida();
+        System.out.println("Vida transferida!");
+        System.out.println("zumbi1: " + z1.mostraVida());
+        System.out.println("zumbi2: " + z2.mostraVida());
 
     }
 
