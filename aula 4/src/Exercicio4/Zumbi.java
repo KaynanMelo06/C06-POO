@@ -21,7 +21,7 @@ public class Zumbi {
             vida -= quantia;
             zumbiAlvo.vida += quantia;
         }
-        
+
     }
 
 }
