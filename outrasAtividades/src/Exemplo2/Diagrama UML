@@ -1,0 +1,27 @@
+https://g.co/gemini/share/0864926e93f9
+Modele um sistema simples de rede social. Crie as classes em Java que atendam à especificação UML abaixo.
+
+Especificação:
+
+    Crie uma classe Main e instancie dois objetos da classe Usuario.
+
+    Faça com que o primeiro usuário crie dois posts. O método fazerPost deve criar uma nova instância da classe Post e atribuir o próprio usuário como autor.
+
+    Em seguida, faça o segundo usuário curtir um dos posts do primeiro usuário. O método para curtir deve ser chamado a partir do objeto Post.
+
+    Ao final, imprima no console os dados dos dois posts (usando o método mostrarDados), para verificar se a curtida foi computada corretamente.
+
+Diagrama UML:
+
++--------------------+                +----------------------+
+|      Usuario       |                |         Post         |
++--------------------+                +----------------------+
+| + nome: String     |<---------------| + autor: Usuario     |
+| + email: String    |     1          | + conteudo: String   |
++--------------------+                | + curtidas: int      |
+| + fazerPost(conteudo: String): Post | +------------------+
++--------------------+                | + receberCurtida()   |
+                                      | + mostrarDados()     |
+                                      +----------------------+
+
+Observação: O método fazerPost foi atualizado para retornar o Post criado. Isso facilita o acesso ao post na classe Main para que outros usuários possam interagir com ele (como curtir).

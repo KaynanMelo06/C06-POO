@@ -1,0 +1,29 @@
+
+Crie as classes em Java para um jogo de batalha de super-heróis,
+conforme a especificação UML abaixo. Em seguida, crie uma classe Main
+para instanciar dois heróis, cada um com seu superpoder, e simule uma batalha.
+
+Especificação:
+
+O método usarPoder deve verificar se o herói tem energia suficiente para usar o poder (o custo de energia do poder).
+
+Se tiver energia, o método usarPoder deve subtrair o custo da energia do herói atacante e chamar o método receberDano do herói alvo, passando o dano do poder como parâmetro.
+
+O método usarPoder deve retornar um valor booleano: true se o ataque foi bem-sucedido e false caso contrário (sem energia suficiente).
+
+Na sua classe Main, mostre o status (nome e energia) dos heróis antes e depois de um deles atacar o outro.
+
+Diagrama UML:
+
+
++-------------------+ 1            1 +-------------------+
+|    SuperHeroi     |<>------------>|    SuperPoder      |
++-------------------+               +--------------------+
+| + nome: String    |               | + nome: String     |
+| + vida: int       |
+| + energia: int    |               | + dano: int        |
++-------------------+               | + custoEnergia: int|
+| + receberDano(dano: int) |        +--------------------+
+| + usarPoder(alvo: SuperHeroi): boolean |
+| + mostrarStatus() |
++-------------------+
