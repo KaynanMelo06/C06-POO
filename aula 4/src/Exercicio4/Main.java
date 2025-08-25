@@ -9,6 +9,20 @@ public class Main {
         Zumbi zumbi1 = new Zumbi();
         Zumbi zumbi2 = new Zumbi();
 
+        zumbi1.nome = "Marco";
+        zumbi2.nome = "Silas";
+
+        zumbi1.vida = input.nextDouble();
+        zumbi2.vida = input.nextDouble();
+
+        System.out.println("Vida do zumbi1: " + zumbi1.mostraVida());
+        System.out.println("Vida do zumbi2: " + zumbi2.mostraVida());
+
+        zumbi1.transfereVida(zumbi2, 5);
+
+        System.out.println("Vida do zumbi1: " + zumbi1.mostraVida());
+        System.out.println("Vida do zumbi2: " + zumbi2.mostraVida());
+
 
     }
 }

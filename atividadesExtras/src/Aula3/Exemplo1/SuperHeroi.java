@@ -1,4 +1,4 @@
-package Exemplo1;
+package Aula3.Exemplo1;
 
 public class SuperHeroi {
     // Atributos

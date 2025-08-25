@@ -1,4 +1,4 @@
-package Exemplo2;
+package Aula3.Exemplo2;
 
 public class Usuario {
     // atributos

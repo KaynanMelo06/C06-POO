@@ -1,4 +1,4 @@
-package Exemplo3;
+package Aula3.Exemplo3;
 
 public class Instrumento {
     // atributos

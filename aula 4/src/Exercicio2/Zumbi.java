@@ -8,12 +8,13 @@ public class Zumbi {
     //Métodos
     double mostraVida(){
         return vida;
-        //System.out.println(this.vida);
     }
 
     void transfereVida(Zumbi zumbiAlvo, double quantia){
         vida -= quantia;
         zumbiAlvo.vida += quantia;
+        System.out.println("Vida transferida!");
+
     }
 
 }

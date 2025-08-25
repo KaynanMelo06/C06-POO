@@ -9,6 +9,9 @@ public class Main {
         Zumbi zumbi1 = new Zumbi();
         Zumbi zumbi2 = new Zumbi();
 
+        zumbi1.nome = "Marco";
+        zumbi2.nome = "Silas";
+
         zumbi1.vida = input.nextDouble();
         zumbi2.vida = input.nextDouble();
 

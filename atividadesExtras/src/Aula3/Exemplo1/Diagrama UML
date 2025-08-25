@@ -1,6 +1,6 @@
 
 Crie as classes em Java para um jogo de batalha de super-heróis,
-conforme a especificação UML abaixo. Em seguida, crie uma classe Main
+conforme a especificação UML abaixo. Em seguida, crie uma classe main
 para instanciar dois heróis, cada um com seu superpoder, e simule uma batalha.
 
 Especificação:

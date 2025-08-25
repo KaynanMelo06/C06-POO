@@ -15,6 +15,7 @@ public class Zumbi {
 
         if ((vida - quantia) <= 0){
             podeTransferir = false;
+            System.out.println(nome + " Não tem vida suficiente!");
         }
         else {
             podeTransferir = true;
