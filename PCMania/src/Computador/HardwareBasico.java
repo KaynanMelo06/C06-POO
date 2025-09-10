@@ -15,15 +15,8 @@ public class HardwareBasico {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public float getCapacidade() {
         return capacidade;
     }
 
-    public void setCapacidade(float capacidade) {
-        this.capacidade = capacidade;
-    }
 }
