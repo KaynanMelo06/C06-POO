@@ -7,13 +7,14 @@ public class Computador {
 
     //Agregacao
     private HardwareBasico[] hardwares;
-    private MemoriaUSB[] memoriaUSBs;
+    private MemoriaUSB memoriaUSBs;
     private SistemaOperacional sistemaOperacional;
 
 
-    public Computador(String marca, float preco, HardwareBasico[] hardwaresIniciais) {
+    public Computador(String marca, float preco, HardwareBasico[] hardwaresIniciais, SistemaOperacional sistemaOperacional) {
         this.marca = marca;
         this.preco = preco;
+        this.sistemaOperacional = sistemaOperacional;
 
         if (hardwaresIniciais != null) {
             this.hardwares = new HardwareBasico[hardwaresIniciais.length];
@@ -32,23 +33,33 @@ public class Computador {
     }
 
     public void addMemoriaUSB(MemoriaUSB musb){
-
+        this.memoriaUSBs = musb;
     }
 
-    //Setter
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
+    //Setters
     public void setPreco(float preco) {
         this.preco = preco;
     }
 
-    public void setSistemaOperacional(SistemaOperacional sistemaOperacional){
-        this.sistemaOperacional = sistemaOperacional;
+    //Getters
+    public String getMarca() {
+        return marca;
     }
 
-    public void sethardwares(HardwareBasico[] hardwares) {
-        this.hardwares = hardwares;
+    public float getPreco() {
+        return preco;
+    }
+
+    /** Pocivelmente Precisa de modificação*/
+    public HardwareBasico[] getHardwares() {
+        return hardwares;
+    }
+
+    public MemoriaUSB getMemoriaUSBs() {
+        return memoriaUSBs;
+    }
+
+    public SistemaOperacional getSistemaOperacional() {
+        return sistemaOperacional;
     }
 }
