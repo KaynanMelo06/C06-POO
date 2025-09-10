@@ -12,4 +12,12 @@ public class SistemaOperacional {
     public void setNome(String nome) {
         this.nome = nome;
     }
+    //Getters
+    public String getNome() {
+        return nome;
+    }
+
+    public int getTipo() {
+        return tipo;
+    }
 }

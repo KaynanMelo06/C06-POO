@@ -69,6 +69,11 @@ public class Main {
         Computador promocao3 = new Computador("Dell", 3, hardwarePromocao3, sistemaOperacional3);
         promocao3.addMemoriaUSB(HDExterno1);
 
+        /**Funcoes para mostrar as configs*/
+//        promocao1.mostraPCConfigs();
+//        promocao2.mostraPCConfigs();
+//        promocao3.mostraPCConfigs();
+
 
     }
 }

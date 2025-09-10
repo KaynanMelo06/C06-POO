@@ -1,8 +1,8 @@
 package Computador;
 
 public class MemoriaUSB{
-    String nome;
-    int capacidade;
+    private String nome;
+    private int capacidade;
 
     public String getNome() {
         return nome;

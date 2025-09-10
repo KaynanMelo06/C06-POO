@@ -22,14 +22,22 @@ public class Computador {
                 this.hardwares[i] = hardwaresIniciais[i];
             }
         } else {
-            //Se nenhum hardware for passado é iniciado um array vazio
+            //Se nenhum hardware for passado e iniciado um array vazio
             this.hardwares = new HardwareBasico[0];
         }
     }
 
     //Metodos
     public void mostraPCConfigs() {
-
+        System.out.println("Configuração do Computador:");
+        System.out.println("Marca: " + this.marca);
+        System.out.println("Preco: " + this.preco);
+        System.out.println("Processador: " + this.hardwares[0].getNome() + "(" + this.hardwares[0].getCapacidade() + " MHz)");
+        System.out.println("Memoria RAM: " + this.hardwares[1].getCapacidade() + " Gb");
+        System.out.println("Armazenamento: " + this.hardwares[2].getCapacidade() + " Gb de HD");
+        System.out.println("Sistema Operacional: " + this.sistemaOperacional.getNome() + "(" + this.sistemaOperacional.getTipo() + " Bits)");
+        System.out.println("Acompanha: " + this.memoriaUSBs.getNome() + " de " + this.memoriaUSBs.getCapacidade() + " Gb");
+        System.out.println("------------------------------------------------------------");
     }
 
     public void addMemoriaUSB(MemoriaUSB musb){
