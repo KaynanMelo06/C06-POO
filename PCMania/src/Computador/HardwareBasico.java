@@ -1,6 +1,29 @@
+package Computador;
+
 public class HardwareBasico {
-    String nome;
-    float capacidade;
+    private String nome;
+    private float capacidade;
 
+    // Construtor para inicializar os atributos
+    public HardwareBasico(String nome, float capacidade) {
+        this.nome = nome;
+        this.capacidade = capacidade;
+    }
 
+    // Getters e Setters (boas práticas de encapsulamento)
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public float getCapacidade() {
+        return capacidade;
+    }
+
+    public void setCapacidade(float capacidade) {
+        this.capacidade = capacidade;
+    }
 }

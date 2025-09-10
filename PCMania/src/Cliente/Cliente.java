@@ -1,3 +1,7 @@
+package Cliente;
+
+import Computador.Computador;
+
 public class Cliente {
     private String nome;
     private String cpf;
@@ -10,6 +14,6 @@ public class Cliente {
     }
 
     public float calculaTotalCompra(){
-
+        return 0;
     }
 }
