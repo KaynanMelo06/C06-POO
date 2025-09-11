@@ -1,9 +1,8 @@
-C06 - Programação Orientada a Objetos
-
-    Repositório da disciplina C06 - Programação Orientada a Objetos com Java
+#     Repositório da disciplina C06 - Programação Orientada a Objetos com Java
+## Por: Kaynan H Dias de Melo
 
 /atividadesExtras/ -> Contem atividades extras, da internet;
 
-/aula3/ ->  Contem atividades do Slide da aula 3;
+/aulaX/ ->  Contem atividades do Slide da aula X;
 
-/aula4/ -> Contem atividades do Slide da aula 4;
+/PCMania/ -> Trabalho da NP1
