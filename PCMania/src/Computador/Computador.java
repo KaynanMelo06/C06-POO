@@ -37,37 +37,15 @@ public class Computador {
         System.out.println("Armazenamento: " + this.hardwares[2].getCapacidade() + " Gb de HD");
         System.out.println("Sistema Operacional: " + this.sistemaOperacional.getNome() + "(" + this.sistemaOperacional.getTipo() + " Bits)");
         System.out.println("Acompanha: " + this.memoriaUSBs.getNome() + " de " + this.memoriaUSBs.getCapacidade() + " Gb");
-        System.out.println("------------------------------------------------------------");
+        System.out.println("----------------------------------------------");
     }
 
     public void addMemoriaUSB(MemoriaUSB musb){
         this.memoriaUSBs = musb;
     }
 
-    //Setters
-    public void setPreco(float preco) {
-        this.preco = preco;
-    }
-
     //Getters
-    public String getMarca() {
-        return marca;
-    }
-
     public float getPreco() {
         return preco;
-    }
-
-    /** Pocivelmente Precisa de modificação*/
-    public HardwareBasico[] getHardwares() {
-        return hardwares;
-    }
-
-    public MemoriaUSB getMemoriaUSBs() {
-        return memoriaUSBs;
-    }
-
-    public SistemaOperacional getSistemaOperacional() {
-        return sistemaOperacional;
     }
 }

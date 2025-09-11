@@ -9,17 +9,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        /**innit*/
         Scanner input = new Scanner(System.in);
-        int codigo = -1;
-        String nomeCliente;
-        String CPFCliente;
-
-        /**Clientes*/
-//        Cliente cliente1 = new Cliente("Fernando", "111.111.111-11");
-//        Cliente cliente2 = new Cliente("Marco", "222.222.222-22");
-        Cliente[] clientes = new Cliente[5];
-        int clientesCadastrados = 0;
 
         /**HardWare Basicos*/
         //Processadores
@@ -77,12 +67,14 @@ public class Main {
         Computador promocao3 = new Computador("Dell", 3, hardwarePromocao3, sistemaOperacional3);
         promocao3.addMemoriaUSB(HDExterno1);
 
-        /**Funcoes para mostrar as configs*/
-//        promocao1.mostraPCConfigs();
-//        promocao2.mostraPCConfigs();
-//        promocao3.mostraPCConfigs();
 
 
+        /**Clientes*/
+        //Cliente cliente1 = new Cliente("Fernando", "10");
+        Cliente[] clientes = new Cliente[5];
+        int clientesCadastrados = 0;
+        int codigo;
+        String nomeCliente;
 
         /** Interface Grafica*/
         System.out.println("Bem vindo a loja PCMania!");
@@ -149,6 +141,10 @@ public class Main {
 
         //Compra dos pcs
         int codigoCompra;
+        //array para salvar os computadores comprados
+        Computador[] computadoresComprados = new Computador[10];
+        int qntComputadores = 0;
+
         do {
             System.out.println("Digite o código de qual computador deseja comprar!");
             System.out.println("1 - PC Promoção 1");
@@ -165,14 +161,31 @@ public class Main {
             switch (codigoCompra) {
                 case 1:
                     System.out.println(clienteLogado.getNome() + " está comprando o computador da promoção 1");
+                    computadoresComprados[qntComputadores] = promocao1;
+                    qntComputadores++;
                     break;
                 case 2:
                     System.out.println(clienteLogado.getNome() + " está comprando o computador da promoção 2");
+                    computadoresComprados[qntComputadores] = promocao2;
+                    qntComputadores++;
                     break;
                 case 3:
                     System.out.println(clienteLogado.getNome() + " está comprando o computador da promoção 3");
+                    computadoresComprados[qntComputadores] = promocao3;
+                    qntComputadores++;
                     break;
                 case 0:
+                    System.out.println("Seu carrinho de compras: ");
+                    System.out.println("Suas informacoes:");
+                    System.out.println("Cliente: " + clienteLogado.getNome());
+                    System.out.println("CPF: " + clienteLogado.getCpf());
+                    System.out.println("----------------------------------------------");
+                    for (int i = 0; i < qntComputadores; i++) {
+                        computadoresComprados[i].mostraPCConfigs();
+                    }
+                    clienteLogado.setComputadores(computadoresComprados);
+                    System.out.println("Preco total do seu carrinho: $" + clienteLogado.calculaTotalCompra());
+
                     System.out.println("Obrigado pela visita, " + clienteLogado.getNome() + ". Saindo...");
                     break;
                 default:

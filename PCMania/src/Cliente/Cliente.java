@@ -15,8 +15,16 @@ public class Cliente {
     }
 
     public float calculaTotalCompra(){
+        float precoTotal = 0;
+        for (int i = 0; i < computadores.length; i++) {
+            if(computadores[i] == null){
+                continue;
+            } 
+            computadores[i].mostraPCConfigs();
+            precoTotal += computadores[i].getPreco();
 
-        return 0;
+        }
+        return precoTotal;
     }
 
     public void setComputadores(Computador[] computadores) {
@@ -26,7 +34,7 @@ public class Cliente {
                 this.computadores[i] = computadores[i];
             }
         } else {
-            //Se nenhum computador for passado e iniciado um array vazio
+            //se nenhum computador for passado e iniciado um array vazio
             this.computadores = new Computador[0];
         }
     }

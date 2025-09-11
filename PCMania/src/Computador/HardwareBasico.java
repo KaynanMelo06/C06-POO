@@ -10,11 +10,12 @@ public class HardwareBasico {
         this.capacidade = capacidade;
     }
 
-    // Getters e Setters (boas práticas de encapsulamento)
+    //Setters
     public String getNome() {
         return nome;
     }
 
+    //Getters
     public float getCapacidade() {
         return capacidade;
     }
