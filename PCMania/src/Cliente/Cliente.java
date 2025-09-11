@@ -30,4 +30,12 @@ public class Cliente {
             this.computadores = new Computador[0];
         }
     }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public String getNome() {
+        return nome;
+    }
 }

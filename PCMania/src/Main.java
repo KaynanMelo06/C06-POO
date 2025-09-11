@@ -11,7 +11,6 @@ public class Main {
 
         /**innit*/
         Scanner input = new Scanner(System.in);
-        Scanner inputCliente = new Scanner(System.in);
         int codigo = -1;
         String nomeCliente;
         String CPFCliente;
@@ -20,6 +19,7 @@ public class Main {
 //        Cliente cliente1 = new Cliente("Fernando", "111.111.111-11");
 //        Cliente cliente2 = new Cliente("Marco", "222.222.222-22");
         Cliente[] clientes = new Cliente[5];
+        int clientesCadastrados = 0;
 
         /**HardWare Basicos*/
         //Processadores
@@ -88,65 +88,100 @@ public class Main {
         System.out.println("Bem vindo a loja PCMania!");
         System.out.println(" ");
 
-        for (int i = 0; i < clientes.length; i++) {
+        //Cadastro
+        while (true) {
+            if (clientesCadastrados >= clientes.length) {
+                System.out.println("Limite de cadastros atingido!");
+                break;
+            }
+
             System.out.println("Deseja realizar um novo cadastro?");
             System.out.println("1 - SIM");
-            System.out.println("2 - NAO");
+            System.out.println("2 - NAO (Ir para as compras)");
             codigo = input.nextInt();
+            input.nextLine();
 
             if (codigo == 1) {
                 System.out.println("Vamos fazer seu cadastro:");
                 System.out.print("Digite seu nome: ");
-                nomeCliente = inputCliente.nextLine();
+                nomeCliente = input.nextLine();
                 System.out.print("Digite seu CPF: ");
-                CPFCliente = inputCliente.nextLine();
-                clientes[i] = new Cliente(nomeCliente,CPFCliente);
-            } else if (codigo == 2){
-                System.out.println("Vamos para as compras!");
-                break;
-            }
-            else {
-                System.out.println("Numero invalido!");
-                break;
-            }
+                String cpfCliente = input.nextLine();
 
+                //cria o cliente e o adiciona na proxima posição livre do array
+                clientes[clientesCadastrados] = new Cliente(nomeCliente, cpfCliente);
+                clientesCadastrados++;
+                System.out.println("Cliente cadastrado com sucesso!");
+
+            } else if (codigo == 2) {
+                System.out.println("Cadastro finalizado. Vamos para as compras!");
+                break;
+            } else {
+                System.out.println("Opção inválida!");
+            }
         }
 
+        if (clientesCadastrados ==0){
+            System.out.println("Nenhum cliente cadastrado!");
+            return;
+        }
+
+        //Login
+        Cliente clienteLogado = null;
+        while (clienteLogado == null) {
+            System.out.print("Por favor, digite seu CPF para continuar: ");
+            String cpfLogin = input.nextLine();
+
+            for (int i = 0; i < clientesCadastrados; i++) {
+                if (clientes[i].getCpf().equals(cpfLogin)) {
+                    clienteLogado = clientes[i];
+                    break;
+                }
+            }
+
+            if (clienteLogado == null) {
+                System.out.println("CPF não encontrado. Tente novamente.");
+            }
+        }
+
+        //input.nextLine(); //retirar o buffer, igual o cin.ignore em c++
+        System.out.println("Login realizado com sucesso! Bem-vindo(a), " + clienteLogado.getNome() + "!");
+
+        //Compra dos pcs
+        int codigoCompra;
         do {
-            codigo = -1;
-            System.out.println("Qual cliente voce é?");
-            CPFCliente = inputCliente.nextLine();
-
-
-
-            System.out.println("Digite o codigo de qual computador deseja comprar!");
+            System.out.println("Digite o código de qual computador deseja comprar!");
+            System.out.println("1 - PC Promoção 1");
+            promocao1.mostraPCConfigs();
+            System.out.println("2 - PC Promoção 2");
+            promocao2.mostraPCConfigs();
+            System.out.println("3 - PC Promoção 3");
+            promocao3.mostraPCConfigs();
             System.out.println("Caso deseje sair, digite 0!");
             System.out.print("Codigo: ");
-            codigo = input.nextInt();
+            codigoCompra = input.nextInt();
+            input.nextLine();
 
-            if (codigo >= 1 && codigo <= 3){
-                switch (codigo){
-                    case 1:
-                        System.out.println("Comprando computador da promocao 1");
-
-                    case 2:
-                        System.out.println("Comprando computador da promocao 2");
-
-                    case 3:
-                        System.out.println("Comprando computador da promocao 3");
-
-                    default:
-                        break;
-                }
-            } else if (codigo == 0){
-                System.out.println("Saindo...");
-            } else {
-                System.out.println("Codigo não existe, tente novamente!");
+            switch (codigoCompra) {
+                case 1:
+                    System.out.println(clienteLogado.getNome() + " está comprando o computador da promoção 1");
+                    break;
+                case 2:
+                    System.out.println(clienteLogado.getNome() + " está comprando o computador da promoção 2");
+                    break;
+                case 3:
+                    System.out.println(clienteLogado.getNome() + " está comprando o computador da promoção 3");
+                    break;
+                case 0:
+                    System.out.println("Obrigado pela visita, " + clienteLogado.getNome() + ". Saindo...");
+                    break;
+                default:
+                    System.out.println("Código não existe, tente novamente!");
+                    break;
             }
-        } while (codigo != 0);
+        } while (codigoCompra != 0);
 
-
-
-
+        input.close();
     }
+
 }
