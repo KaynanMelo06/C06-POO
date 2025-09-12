@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-
+        int matricula = 2197;
         /**HardWare Basicos*/
         //Processadores
         HardwareBasico processador1 = new HardwareBasico("Pentium Core i3", 2200);
@@ -56,17 +56,16 @@ public class Main {
         /**Computadores das promocoes montados*/
         //Promocao 1
         HardwareBasico[] hardwarePromocao1 = new HardwareBasico[]{processador1, memoriaRAM1, HD1};
-        Computador promocao1 = new Computador("Apple", 1,hardwarePromocao1, sistemaOperacional1);
+        Computador promocao1 = new Computador("Apple", matricula,hardwarePromocao1, sistemaOperacional1);
         promocao1.addMemoriaUSB(penDrive1);
         //Promocao 2
         HardwareBasico[] hardwarePromocao2 = new HardwareBasico[]{processador2, memoriaRAM2, HD2};
-        Computador promocao2 = new Computador("Samsung", 2, hardwarePromocao2, sistemaOperacional2);
+        Computador promocao2 = new Computador("Samsung",matricula + 1234 , hardwarePromocao2, sistemaOperacional2);
         promocao2.addMemoriaUSB(penDrive2);
         //Promocao 3
         HardwareBasico[] hardwarePromocao3 = new HardwareBasico[]{processador3, memoriaRAM3, HD3};
-        Computador promocao3 = new Computador("Dell", 3, hardwarePromocao3, sistemaOperacional3);
+        Computador promocao3 = new Computador("Dell", matricula + 5678, hardwarePromocao3, sistemaOperacional3);
         promocao3.addMemoriaUSB(HDExterno1);
-
 
 
         /**Clientes*/
@@ -158,6 +157,10 @@ public class Main {
             codigoCompra = input.nextInt();
             input.nextLine();
 
+            if (codigoCompra == 0) {
+                break;
+            }
+
             switch (codigoCompra) {
                 case 1:
                     System.out.println(clienteLogado.getNome() + " está comprando o computador da promoção 1");
@@ -174,25 +177,32 @@ public class Main {
                     computadoresComprados[qntComputadores] = promocao3;
                     qntComputadores++;
                     break;
-                case 0:
-                    System.out.println("Seu carrinho de compras: ");
-                    System.out.println("Suas informacoes:");
-                    System.out.println("Cliente: " + clienteLogado.getNome());
-                    System.out.println("CPF: " + clienteLogado.getCpf());
-                    System.out.println("----------------------------------------------");
-                    for (int i = 0; i < qntComputadores; i++) {
-                        computadoresComprados[i].mostraPCConfigs();
-                    }
-                    clienteLogado.setComputadores(computadoresComprados);
-                    System.out.println("Preco total do seu carrinho: $" + clienteLogado.calculaTotalCompra());
-
-                    System.out.println("Obrigado pela visita, " + clienteLogado.getNome() + ". Saindo...");
-                    break;
                 default:
                     System.out.println("Código não existe, tente novamente!");
                     break;
             }
         } while (codigoCompra != 0);
+
+        System.out.println("Seu carrinho de compras: ");
+        System.out.println("Suas informacoes:");
+        System.out.println("Cliente: " + clienteLogado.getNome());
+        System.out.println("CPF: " + clienteLogado.getCpf());
+        System.out.println("----------------------------------------------");
+
+
+        //System.out.println("DEBUG -> qntComputadores = " + qntComputadores);
+
+        for (int i = 0; i < qntComputadores; i++) {
+            if( computadoresComprados[i] != null) {
+                computadoresComprados[i].mostraPCConfigs();
+            }
+        }
+
+        clienteLogado.setComputadores(computadoresComprados);
+
+        System.out.println("Preco total do seu carrinho: $" + clienteLogado.calculaTotalCompra());
+
+        System.out.println("Obrigado pela visita, " + clienteLogado.getNome() + ". Saindo...");
 
         input.close();
     }

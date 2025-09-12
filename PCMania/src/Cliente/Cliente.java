@@ -20,25 +20,18 @@ public class Cliente {
             if(computadores[i] == null){
                 continue;
             } 
-            computadores[i].mostraPCConfigs();
             precoTotal += computadores[i].getPreco();
 
         }
         return precoTotal;
     }
 
+    //Setter
     public void setComputadores(Computador[] computadores) {
-        if (computadores != null) {
-            this.computadores = new Computador[computadores.length];
-            for (int i = 0; i < computadores.length; i++) {
-                this.computadores[i] = computadores[i];
-            }
-        } else {
-            //se nenhum computador for passado e iniciado um array vazio
-            this.computadores = new Computador[0];
-        }
+        this.computadores = computadores;
     }
 
+    //Getters
     public String getCpf() {
         return cpf;
     }
