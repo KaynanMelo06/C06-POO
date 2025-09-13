@@ -74,6 +74,7 @@ public class Main {
         int clientesCadastrados = 0;
         int codigo;
         String nomeCliente;
+        String cpfCliente;
 
         /** Interface Grafica*/
         System.out.println("Bem vindo a loja PCMania!");
@@ -97,7 +98,7 @@ public class Main {
                 System.out.print("Digite seu nome: ");
                 nomeCliente = input.nextLine();
                 System.out.print("Digite seu CPF: ");
-                String cpfCliente = input.nextLine();
+                cpfCliente = input.nextLine();
 
                 //cria o cliente e o adiciona na proxima posição livre do array
                 clientes[clientesCadastrados] = new Cliente(nomeCliente, cpfCliente);
@@ -108,7 +109,7 @@ public class Main {
                 System.out.println("Cadastro finalizado. Vamos para as compras!");
                 break;
             } else {
-                System.out.println("Opção inválida!");
+                System.out.println("Opcao invalida!");
             }
         }
 
@@ -131,7 +132,7 @@ public class Main {
             }
 
             if (clienteLogado == null) {
-                System.out.println("CPF não encontrado. Tente novamente.");
+                System.out.println("CPF nao encontrado. Tente novamente.");
             }
         }
 
@@ -145,7 +146,7 @@ public class Main {
         int qntComputadores = 0;
 
         do {
-            System.out.println("Digite o código de qual computador deseja comprar!");
+            System.out.println("Digite o codigo de qual computador deseja comprar!");
             System.out.println("1 - PC Promoção 1");
             promocao1.mostraPCConfigs();
             System.out.println("2 - PC Promoção 2");
