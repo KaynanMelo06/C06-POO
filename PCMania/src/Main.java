@@ -3,6 +3,7 @@ import Cliente.Cliente;
 import Computador.HardwareBasico;
 import Computador.MemoriaUSB;
 import Computador.SistemaOperacional;
+import Computador.ProcessarPedido;
 
 import java.util.Scanner;
 
@@ -200,6 +201,9 @@ public class Main {
         }
 
         clienteLogado.setComputadores(computadoresComprados);
+
+        ProcessarPedido.processar(computadoresComprados);
+
 
         System.out.println("Preco total do seu carrinho: $" + clienteLogado.calculaTotalCompra());
 
